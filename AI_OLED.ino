@@ -1,10 +1,10 @@
 
-// This is a very simple first attempt at using an arduino UNO to drive a Waveshare 128x128 OLED 
-// taking data from a BLO055 gyroscope. It draws a very simple artificial horizon and also the 
+// This is a attempt at using an arduino UNO to drive a Waveshare 128x128 OLED 
+// taking data from a BLO055 gyroscope. It draws a simple artificial horizon and also the 
 // heading which is calibrated against the magnetic flux detector in the BL055 to try to track 
 // true north without having to be hand set.
 //
-// The horizon which is drawn as three lines, one the actual horizon and two perspective lines that 
+// The horizon is drawn as three lines, one the actual horizon and two perspective lines that 
 // join it from below. Then a little aircraft figure is drawn like an inverted gull wing --V--. 
 // The aircraft figure remains stationary in the display just as the wings would remain stationary to
 // a pilot, however the horizon is rotated with roll and pitched with pitch to mimic an actual 
@@ -13,7 +13,7 @@
 // In addition a magnetic headig is display at the top from 0..360 and an attempt is made to slave
 // it to the magnetic flux detector so that it finds true north.
 //
-// This is experimental version 2.0 for educational purposes only and should not be used for actual
+// This is version 2.0 for educational purposes only and should not be used for actual
 // flight reference. A real artificial horizon requires many things that this does not have not least
 // of which is hardware which can work a wide variety of temperatures and vibration. 
 //
@@ -22,10 +22,6 @@
 // The OLED however is wired as per the OLED_functions.h include file. There are some tricks with 
 // the OLED because the UNO does not have neough memory to draw the image on the UNO before sending
 // it to the OLED. As a result we draw the image as 128x128 but ignore the greyscale values.
-//
-// THis software is provided as is, and is freely usable by anybody with no warranty or liability by
-// the author. BY all means copy this code but please maintain this disclaimer so that nobody uses this 
-// in a real aircraft and gets hurt.
 //
 // Peter Ashwood-Smith - 2021 - Lockdown version 2.0
 
